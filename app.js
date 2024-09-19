@@ -1,3 +1,3 @@
 #!/usr/bin/env node
-
-require('./src/bootstrap')('app');
+const startUnblockServer = require('./src/app');
+startUnblockServer();

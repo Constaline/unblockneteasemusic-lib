@@ -159,6 +159,7 @@ setInterval(
 	15 * 60 * 1000
 );
 
+let serverInstance =
 Promise.all(
 	dnsSource.map((query) => query(target.join(','))).concat(target.map(dns))
 )
@@ -186,5 +187,11 @@ Promise.all(
 	})
 	.catch((error) => {
 		console.log(error);
-		process.exit(1);
+		// process.exit(1);
 	});
+
+let startUnblockServer = () => {
+		return serverInstance;
+}
+
+module.exports = startUnblockServer;
